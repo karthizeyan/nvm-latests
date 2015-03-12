@@ -29,8 +29,8 @@ Here's what I'm doing right now
 - deploy to Heroku
 - latests version is stored (where?) and only looked up once per day
 
-
 ## Doing
-- set up inital structure of project
+- add config object
 
 ## Done
+- set up inital structure of project
