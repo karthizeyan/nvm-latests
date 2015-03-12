@@ -1,11 +1,9 @@
-var client = new ZeroClipboard(document.getElementById("copy-button"));
+var client = new ZeroClipboard($(".copy-button"));
 
 client.on("ready", function(readyEvent) {
-    // alert( "ZeroClipboard SWF is ready!" );
-
     client.on("aftercopy", function(event) {
         $("#copyMessage")
-            .html("URL copied to your clipboard")
+            .html("Copied to clipboard...")
             .fadeIn(500)
             .delay(2000)
             .fadeOut(500);

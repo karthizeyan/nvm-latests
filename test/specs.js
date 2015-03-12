@@ -20,11 +20,30 @@ describe('Homepage', function(){
 			.end(done);
 	});
 
+	it('prints the latest script', function(done){
+		request
+			.get('/')
+			.expect(function(res){
+				res.text.should.containEql("/script | bash</code>");
+			})
+			.end(done);
+	});
+
 	it('has a link to the latests script', function(done){
 		request
 			.get('/')
 			.expect(function(res){
 				res.text.should.containEql("href='/script'");
+			})
+			.end(done);
+	});
+
+	it('has buttons to copy commands', function(done){
+		request
+			.get('/')
+			.expect(function(res){
+				res.text.should.containEql("id='copy-button-sudo-curl'");
+				res.text.should.containEql("id='copy-button-curl'");
 			})
 			.end(done);
 	});
