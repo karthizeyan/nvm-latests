@@ -1,9 +1,10 @@
 var app = module.exports = require('koa')();
 var config = require('./config')();
 var routes = require('koa-route');
+var render = require('./lib/render')
 
 
-app.use(routes.get('/', function *(){ this.body = "You're at home!"}));
+app.use(routes.get('/', function *(){ this.body = yield render('home.html') }));
 app.use(routes.get('/script', function *(){ this.body = "You're at the script page!"}));
 
 // start it

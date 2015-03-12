@@ -22,7 +22,6 @@ wget -qO- http://nvm-latest.herokuapp.com/script | bash
 Here's what I'm doing right now
 
 ## Todo
-- Home page has created link for the latests version
 - Home page has copy-button for the script to get it on clipboard
 - Home page has copy-button for the script to get it on clipboard with sudo-prefix
 - /script returns the raw script for curl-ling scenarios
@@ -30,7 +29,9 @@ Here's what I'm doing right now
 - latests version is stored (where?) and only looked up once per day
 
 ## Doing
-- add config object
+- Home page has created link for the latests version
 
 ## Done
+- add Makefile
+- add config object
 - set up inital structure of project
