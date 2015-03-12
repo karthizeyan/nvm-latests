@@ -1,2 +1,36 @@
 # nvm-latests
-Returns the url to the latests nvm release
+[nvm](https://github.com/creationix/nvm) is an awesome tool to keep control over several instances of [iojs](http://iojs.org) and [Node](http://nodejs.org) on your computer.
+
+The only problem I've found with nvm is that it doesn't update itself and it's hard to see if there's new version, or what the latests version is.
+
+This simple (!) tool solves that.
+
+You can got to http://nvm-latest.herokuapp.com and copy the current url, or you can just go:
+´´´bash
+	curl http://nvm-latest.herokuapp.com/script | bashcurl
+´´´
+
+or
+
+or Wget:
+
+´´´bash
+wget -qO- http://nvm-latest.herokuapp.com/script | bash
+´´´
+
+# kanban
+Here's what I'm doing right now
+
+## Todo
+- Home page has created link for the latests version
+- Home page has copy-button for the script to get it on clipboard
+- Home page has copy-button for the script to get it on clipboard with sudo-prefix
+- /script returns the raw script for curl-ling scenarios
+- deploy to Heroku
+- latests version is stored (where?) and only looked up once per day
+
+
+## Doing
+- set up inital structure of project
+
+## Done
