@@ -4,7 +4,7 @@
   "description": "A simple site to get to the latest version of nvm",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --harmony-generators -u bdd -R spec",
+    "test": "./node_modules/mocha/bin/mocha --harmony-generators -t 10000 -u bdd -R spec",
     "startLocal": "./node_modules/nodemon/bin/nodemon.js --harmony -e html --watch views *.js"
   },
   "repository": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/marcusoftnet/nvm-latests",
   "devDependencies": {
+    "co": "^4.4.0",
     "mocha": "^2.2.1",
     "nodemon": "^1.3.7",
     "should": "^5.1.0",
@@ -33,6 +34,7 @@
     "koa-route": "^2.4.0",
     "koa-static": "^1.4.9",
     "request": "^2.53.0",
+    "restler": "^3.2.2",
     "swig": "^1.4.2"
   }
 }
