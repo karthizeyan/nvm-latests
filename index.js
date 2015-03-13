@@ -21,7 +21,7 @@ app.use(routes.get('/', function *(){
 
 app.use(routes.get('/script', function *(){
 	this.type = 'text/plain; charset=utf-8';
-	this.body = "You're at the script page!";
+	this.body = getLatestScript();
 }));
 
 // start it
