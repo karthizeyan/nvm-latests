@@ -10,9 +10,7 @@ You can got to http://nvm-latest.herokuapp.com and copy the current url, or you 
 	curl http://nvm-latest.herokuapp.com/script | bashcurl
 ´´´
 
-or
-
-or Wget:
+or using Wget:
 
 ´´´bash
 wget -qO- http://nvm-latest.herokuapp.com/script | bash
@@ -22,15 +20,15 @@ wget -qO- http://nvm-latest.herokuapp.com/script | bash
 Here's what I'm doing right now
 
 ## Todo
-- /script returns the raw script for curl-ling scenarios
 - deploy to Heroku
 - latests version is stored (where?) and only looked up once per day
 
 ## Doing
-- Home page has copy-button for the script to get it on clipboard
-- Home page has copy-button for the script to get it on clipboard with sudo-prefix
+- /script returns the raw script for curl-ling scenarios
 
 ## Done
+- Home page has copy-button for the script to get it on clipboard
+- Home page has copy-button for the script to get it on clipboard with sudo-prefix
 - Home page has link for the latests version
 - add Makefile
 - add config object

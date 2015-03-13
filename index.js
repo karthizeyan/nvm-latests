@@ -14,10 +14,15 @@ app.use(routes.get('/', function *(){
 	var vm = {
 		curl : curlCommand,
 		sudoCurl : "sudo " + curlCommand
-	}
+	};
+
 	this.body = yield render('home.html', vm);
 }));
-app.use(routes.get('/script', function *(){ this.body = "You're at the script page!"}));
+
+app.use(routes.get('/script', function *(){
+	this.type = 'text/plain; charset=utf-8';
+	this.body = "You're at the script page!";
+}));
 
 // start it
 app.listen(config.port);
