@@ -24,16 +24,7 @@ describe('Homepage', function(){
 		request
 			.get('/')
 			.expect(function(res){
-				res.text.should.containEql("/script | bash</code>");
-			})
-			.end(done);
-	});
-
-	it('has a link to the latests script', function(done){
-		request
-			.get('/')
-			.expect(function(res){
-				res.text.should.containEql("href='/script'");
+				res.text.should.containEql("| bash");
 			})
 			.end(done);
 	});
@@ -47,16 +38,4 @@ describe('Homepage', function(){
 			})
 			.end(done);
 	});
-});
-
-describe('Script page', function(){
-	it('returns plain text', function (done) {
-		request
-			.get('/')
-			.expect('Content-Type', /text/)
-			.expect(200, done);
-	});
-	it('prints nice error message if the script was not found');
-	it('returns the latest nvm installation script');
-	it('starts looking at config.latestVersion');
 });

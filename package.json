@@ -4,7 +4,7 @@
   "description": "A simple site to get to the latest version of nvm",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --harmony-generators -t 10000 -u bdd -R spec",
+    "test": "./node_modules/mocha/bin/mocha -t 10000 -u bdd -R spec",
     "startLocal": "iojs index.js"
   },
   "repository": {
@@ -37,6 +37,8 @@
     "restler": "^3.2.2",
     "swig": "^1.4.2"
   },
-  "engineStrict" : true,
-  "engines" : { "iojs" : "~1.8.1" }
+  "engineStrict": true,
+  "engines": {
+    "iojs": "~1.8.1"
+  }
 }

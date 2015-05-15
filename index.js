@@ -4,24 +4,25 @@ var config = require('./config')();
 var routes = require('koa-route');
 var serve = require('koa-static');
 var render = require('./lib/render');
-var getTag = require('./lib/getTag.js');
+var getTag = require('./lib/urlGetter.js');
 
 // configuration
 app.use(serve(__dirname + '/public'));
 
 // routes
 app.use(routes.get('/', function *(){
-	// If CURL is accessing us... 
-	var scriptUrl = "http://" + this.host + "/script";
-	var curlCommand = "curl " + scriptUrl + " | bash";
-	var vm = { curl : curlCommand, sudoCurl : "sudo " + curlCommand };
+	
+	if(isCurlRequest(this)){
+		let url = yield getLatestScriptUrl();
+		this.body = yield getTag.getInstallScript(url);
+		return;
+	}
+	
+	let scriptUrl = "http://" + this.host;
+	let curlCommand = "curl " + scriptUrl + " | bash";
+	let vm = { curl : curlCommand, sudoCurl : "sudo " + curlCommand };
 
 	this.body = yield render('home.html', vm);
-}));
-
-app.use(routes.get('/script', function *(){
-	let url = yield getLatestScriptUrl();
-	this.redirect(url);
 }));
 
 function *getLatestScriptUrl(){
@@ -30,12 +31,14 @@ function *getLatestScriptUrl(){
 };
 
 function *getLatestsTag(){
-	// - is the tag updated within 24 hours?
-	// -- no -> get the latest tag and store it
 	let tag = yield getTag.getLatestTag();
-	console.log(tag);
 	return tag;
 };
+
+function isCurlRequest(req){
+	return req.get('user-agent').toLowerCase().startsWith('curl');
+};
+
 
 // start it
 app.listen(config.port);

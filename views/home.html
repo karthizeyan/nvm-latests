@@ -5,12 +5,8 @@
     <div class="col-lg-offset-2 col-lg-8">
     	<div class="panel-default">
 			<div class="panel-heading">
-				<h3>Link to latest script</h3>
+				<div class="code">{{curl}}</div>
 			</div>
-			<div class="panel-body">
-				<code>{{curl}}</code>
-			</div>
-			<div class="panel-footer"><a href='/script'>Latest installation script</a></div>
 		</div>
     </div>
 </div>
@@ -18,9 +14,9 @@
 <div class="row">
     <div class="col-lg-12">&nbsp;</div>
 </div>
-    <div class="col-lg-offset-2 col-lg-8">
+    <div class="col-lg-offset-4 col-lg-6">
 		<button
-			class="btn btn-large btn-info copy-button"
+			class="btn btn-large btn-primary copy-button"
 			id='copy-button-curl'
 			data-clipboard-text="{{curl}}"
 			title="installation command with curl">
@@ -28,12 +24,12 @@
 				Copy command
 		</button>
 		<button
-			class="btn btn-large btn-info copy-button"
+			class="btn btn-large btn-primary copy-button"
 			id='copy-button-sudo-curl'
 			data-clipboard-text="{{sudoCurl}}"
 			title="installation command with curl">
 				<span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
-				Copy sudo prefixed command
+				Copy sudo command
 		</button>
     	<span class="normal" id="copyMessage"></span>
     </div>
