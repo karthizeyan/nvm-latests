@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -t 10000 -u bdd -R spec",
     "startLocal": "iojs index.js",
-    "start": "iojs index.js"
+    "start": "iojs index.js prod"
   },
   "repository": {
     "type": "git",
