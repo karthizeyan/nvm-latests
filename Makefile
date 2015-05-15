@@ -19,7 +19,7 @@ createMinorRelease:
 
 test:
 	@$(BIN)/mocha \
-		--harmony-generators \
+		-t 10000 \
 		-u bdd \
 		-R dot \
 		-b
