@@ -1,20 +1,15 @@
-var mongoProdUri = process.env.MONGOLAB_URI || 'localhost:27017/nvm-latest_Prod';
-
 var config = {
 	local: {
 		mode: 'local',
-		port: 3000,
-		mongoUrl: 'localhost:27017/nvm-latest_Dev'
+		port: 3000
 	},
 	staging: {
 		mode: 'staging',
-		port: 4000,
-		mongoUrl: 'localhost:27017/nvm-latest_Test'
+		port: 4000
 	},
 	prod: {
 		mode: 'prod',
-		port: process.env.PORT || 5000,
-		mongoUrl: mongoProdUri
+		port: process.env.PORT || 5000
 	}
 };
 
