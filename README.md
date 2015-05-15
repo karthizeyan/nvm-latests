@@ -7,7 +7,7 @@ This simple (!) tool solves that.
 
 You can got to http://nvm-latest.herokuapp.com and copy the current url, or you can just go:
 ´´´bash
-	curl http://nvm-latest.herokuapp.com/script | bashcurl
+	curl http://nvm-latest.herokuapp.com/script | bash
 ´´´
 
 or using Wget:
@@ -15,6 +15,9 @@ or using Wget:
 ´´´bash
 wget -qO- http://nvm-latest.herokuapp.com/script | bash
 ´´´
+# Principle
+I will not store the script but rather get it from github.
+I will cache the latests tag from github for 24 h.
 
 # kanban
 Here's what I'm doing right now

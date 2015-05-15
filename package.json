@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --harmony-generators -t 10000 -u bdd -R spec",
-    "startLocal": "./node_modules/nodemon/bin/nodemon.js --harmony -e html --watch views *.js"
+    "startLocal": "iojs index.js"
   },
   "repository": {
     "type": "git",
@@ -36,5 +36,7 @@
     "request": "^2.53.0",
     "restler": "^3.2.2",
     "swig": "^1.4.2"
-  }
+  },
+  "engineStrict" : true,
+  "engines" : { "iojs" : "~1.8.1" }
 }
