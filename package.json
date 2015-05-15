@@ -1,6 +1,6 @@
 {
   "name": "nvm-latests",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A simple site to get to the latest version of nvm",
   "main": "index.js",
   "scripts": {
