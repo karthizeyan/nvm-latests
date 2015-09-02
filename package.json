@@ -4,9 +4,15 @@
   "description": "A simple site to get to the latest version of nvm",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -t 10000 -u bdd -R spec",
+    "test": "mocha -t 20000 -u bdd -R spec",
     "startLocal": "iojs index.js",
-    "start": "iojs index.js prod"
+    "start": "iojs index.js prod",
+    "test:deploy": "npm test -- -R dot",
+    "launch": "open https://nvm-latest.herokuapp.com/",
+    "push:heroku": "git push heroku master",
+    "push:github": "git push --tags origin HEAD:master",
+    "push": "npm run push:github && npm run push:heroku",
+    "deploy:prod": "npm run test:deploy && npm version minor && npm run push && npm run launch"
   },
   "repository": {
     "type": "git",
@@ -26,7 +32,6 @@
     "co": "^4.4.0",
     "mocha": "^2.2.1",
     "nodemon": "^1.3.7",
-    "semver": "^4.3.4",
     "should": "^5.1.0",
     "supertest": "^0.15.0"
   },
@@ -41,6 +46,6 @@
   },
   "engineStrict": true,
   "engines": {
-    "iojs": "~1.8.1"
+    "iojs": "~3.0.0"
   }
 }
